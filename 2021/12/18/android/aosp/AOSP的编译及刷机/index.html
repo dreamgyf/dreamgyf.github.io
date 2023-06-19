@@ -1,0 +1,108 @@
+<!DOCTYPE html><html lang="zh-Hans"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content="AOSP的编译及刷机"><meta name="keywords" content="AOSP"><meta name="author" content="dreamgyf"><meta name="copyright" content="dreamgyf"><title>AOSP的编译及刷机 | 始终都是梦</title><link rel="shortcut icon" href="/images/avatar.jpeg"><link rel="stylesheet" href="/css/index.css?version=1.9.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css?version=1.9.0"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css?version=1.9.0"><meta name="format-detection" content="telephone=no"><meta http-equiv="x-dns-prefetch-control" content="on"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  hexoVersion: '4.2.1'
+} </script><meta name="generator" content="Hexo 4.2.1"></head><body><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar" data-display="true"><div class="toggle-sidebar-info text-center"><span data-toggle="切换文章详情">切换站点概览</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#简介"><span class="toc-number">1.</span> <span class="toc-text">简介</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#准备工作"><span class="toc-number">2.</span> <span class="toc-text">准备工作</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#环境搭建"><span class="toc-number">3.</span> <span class="toc-text">环境搭建</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装JDK"><span class="toc-number">3.1.</span> <span class="toc-text">安装JDK</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装其他程序包"><span class="toc-number">3.2.</span> <span class="toc-text">安装其他程序包</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#下载源码"><span class="toc-number">4.</span> <span class="toc-text">下载源码</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#下载驱动"><span class="toc-number">5.</span> <span class="toc-text">下载驱动</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#开始编译"><span class="toc-number">6.</span> <span class="toc-text">开始编译</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#刷机"><span class="toc-number">7.</span> <span class="toc-text">刷机</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#常见问题"><span class="toc-number">8.</span> <span class="toc-text">常见问题</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#MacOS上找不到SDK"><span class="toc-number">8.1.</span> <span class="toc-text">MacOS上找不到SDK</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#too-many-open-files"><span class="toc-number">8.2.</span> <span class="toc-text">too many open files</span></a></li></ol></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="/images/avatar.jpeg"></div><div class="author-info__name text-center">dreamgyf</div><div class="author-info__description text-center"></div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">文章</span><span class="pull-right">36</span></a><a class="author-info-articles__tags article-meta" href="/tags"><span class="pull-left">标签</span><span class="pull-right">40</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">分类</span><span class="pull-right">27</span></a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(/images/background.jpeg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">始终都是梦</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus">   <a class="site-page" href="/">主页</a><a class="site-page" href="/archives">文章</a><a class="site-page" href="/tags">标签</a><a class="site-page" href="/categories">分类</a></span><span class="pull-right"></span></div><div id="post-info"><div id="post-title">AOSP的编译及刷机</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2021-12-18</time><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/Android/">Android</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/Android/AOSP/">AOSP</a></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>众所周知，Android是开源的，AOSP（Android Open Source Project）为Android开源项目的缩写。作为一名Android开发，掌握Android系统的工作机制是技术成长中的必经之路，第一步就是自己编译Android系统。</p>
+<h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><ul>
+<li>一台可以解BL锁（BootLoader），并且厂商提供了硬件驱动的设备，这里推荐使用Google亲儿子手机（Nexus、Pixel系列），可以解BL锁，Google官方会提供硬件驱动，并且AOSP里会提供对应机型的配置</li>
+<li>一块剩余空间至少大于300GB的硬盘（Android11源码-150GB左右，编译产物-150GB左右）</li>
+<li><del>系统最好为Linux，MacOS也可（Windows可以用WSL）</del></li>
+<li>系统需要使用Ubuntu（我不确定别的Linux发行版可不可用），自2021年6月22日起，AOSP不再支持在Windows或MacOS上构建（Windows可以使用WSL，详见<a href="https://juejin.cn/post/7196869815596286008" target="_blank" rel="noopener">WSL编译AOSP必要的几个前置工作</a>）</li>
+<li>内存至少要16GB，过小的内存会导致生成build.ninja文件失败</li>
+</ul>
+<p>这里是Google官方的推荐要求：<a href="https://source.android.com/setup/build/requirements?hl=zh-cN" target="_blank" rel="noopener">https://source.android.com/setup/build/requirements?hl=zh-cN</a></p>
+<h1 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h1><p>参考文档：<a href="https://source.android.com/source/initializing?hl=zh-cn" target="_blank" rel="noopener">https://source.android.com/source/initializing?hl=zh-cn</a></p>
+<p>主要就是下载各种编译工具，像jdk，gcc，g++等，还有各种动态库以及辅助工具</p>
+<p>注：此文档中部分环境安装有误，缺失了一些必要的库安装，可能会编译中途报错，可以参考下文的环境安装，如果编译还是出现了依赖缺失，安装好继续编译即可</p>
+<h2 id="安装JDK"><a href="#安装JDK" class="headerlink" title="安装JDK"></a>安装JDK</h2><p>以Ubuntu系统为例：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install openjdk-11-jdk</span><br></pre></td></tr></table></figure>
+
+<p>注：现在AOSP编译要求JDK版本&gt;=9</p>
+<h2 id="安装其他程序包"><a href="#安装其他程序包" class="headerlink" title="安装其他程序包"></a>安装其他程序包</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install git-core gnupg flex bison gperf build-essential zip curl zlib1g-dev gcc-multilib g++-multilib libc6-dev-i386 lib32ncurses5-dev x11proto-core-dev libx11-dev lib32z-dev ccache libgl1-mesa-dev libxml2-utils xsltproc unzip libncurses5</span><br></pre></td></tr></table></figure>
+
+<p>注：官方文档中缺失了libncurses5，会导致编译中途找不到libncurses.so.5库</p>
+<h1 id="下载源码"><a href="#下载源码" class="headerlink" title="下载源码"></a>下载源码</h1><p>Android源码是由非常多的Git仓库组成的，为了可以统一管理这么多个Git仓库，Google出了一款工具，叫Repo</p>
+<p>参考文档：<a href="https://source.android.com/source/downloading?hl=zh-cn" target="_blank" rel="noopener">https://source.android.com/source/downloading?hl=zh-cn</a></p>
+<p>因为Google在国内访问的问题，建议使用镜像下载源码，下面提供几个镜像地址：</p>
+<ul>
+<li>清华大学</li>
+</ul>
+<p><a href="https://mirrors.tuna.tsinghua.edu.cn/git/AOSP/platform/manifest" target="_blank" rel="noopener">https://mirrors.tuna.tsinghua.edu.cn/git/AOSP/platform/manifest</a></p>
+<ul>
+<li>中科大</li>
+</ul>
+<p>git://mirrors.ustc.edu.cn/aosp/platform/manifest</p>
+<p>repo init的时候可以指定分支：<a href="https://source.android.com/setup/start/build-numbers?hl=zh-cn#source-code-tags-and-builds" target="_blank" rel="noopener">https://source.android.com/setup/start/build-numbers?hl=zh-cn#source-code-tags-and-builds</a> 在这里可以找到对应系统分支所支持的设备，比如说我的设备是Pixel2，在这张表上可以看到android-11.0.0_r25这个分支下的代码支持我的设备，所以可以执行以下命令：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">repo init -u https://mirrors.tuna.tsinghua.edu.cn/git/AOSP/platform/manifest -b android-11.0.0_r25</span><br></pre></td></tr></table></figure>
+
+<p>然后开始进行同步：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">repo sync -j8 #j8代表使用8个线程</span><br></pre></td></tr></table></figure>
+
+<p>AOSP代码下载是个漫长的过程，需要耐心等待</p>
+<h1 id="下载驱动"><a href="#下载驱动" class="headerlink" title="下载驱动"></a>下载驱动</h1><p>在<a href="https://developers.google.com/android/drivers?hl=zh-cn" target="_blank" rel="noopener">https://developers.google.com/android/drivers?hl=zh-cn</a>这个网站可以找到Nexus、Pixel系列的驱动，要注意每个驱动后面会有一串代号，需要和你下载的AOSP源码的build号相对应</p>
+<p><img src="https://raw.githubusercontent.com/dreamgyf/ImageStorage/master/AOSP%E7%9A%84%E7%BC%96%E8%AF%91%E5%8F%8A%E5%88%B7%E6%9C%BA_%E4%B8%8B%E8%BD%BD%E9%A9%B1%E5%8A%A8.png" alt=""></p>
+<p><img src="https://raw.githubusercontent.com/dreamgyf/ImageStorage/master/AOSP%E7%9A%84%E7%BC%96%E8%AF%91%E5%8F%8A%E5%88%B7%E6%9C%BA_%E4%B8%8B%E8%BD%BD%E9%A9%B1%E5%8A%A82.png" alt=""></p>
+<p>将他们解压后会得到两个shell文件</p>
+<p><img src="https://raw.githubusercontent.com/dreamgyf/ImageStorage/master/AOSP%E7%9A%84%E7%BC%96%E8%AF%91%E5%8F%8A%E5%88%B7%E6%9C%BA_%E9%A9%B1%E5%8A%A8%E8%A7%A3%E5%8E%8B.png" alt=""></p>
+<p>将他们复制到下载好的aosp源码的根目录</p>
+<p>注：网上很多教程说终端要选用bash不要使用zsh，我亲测使用zsh没有问题，如果在编译过程中出现问题，可以尝试切换shell</p>
+<ol>
+<li>先将shell切换到aosp源码根目录</li>
+<li>执行两个解压出来的驱动shell，记得要同意License</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/dreamgyf/ImageStorage/master/AOSP%E7%9A%84%E7%BC%96%E8%AF%91%E5%8F%8A%E5%88%B7%E6%9C%BA_%E9%A9%B1%E5%8A%A8%E5%AE%89%E8%A3%85.png" alt=""></p>
+<ol start="3">
+<li>执行source build/envsetup.sh，这会向shell中写入一些环境变量</li>
+<li>先make clean一下</li>
+<li>使用lunch命令选择构建目标</li>
+</ol>
+<p>这里是该命令的规则：<a href="https://source.android.com/setup/build/building?hl=zh-cn#choose-a-target" target="_blank" rel="noopener">https://source.android.com/setup/build/building?hl=zh-cn#choose-a-target</a></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lunch aosp_walleye-userdebug</span><br></pre></td></tr></table></figure>
+
+<p>后面跟随的的参数可以在这里找到：<a href="https://source.android.com/setup/build/running?hl=zh-cn#selecting-device-build" target="_blank" rel="noopener">https://source.android.com/setup/build/running?hl=zh-cn#selecting-device-build</a></p>
+<p><img src="https://raw.githubusercontent.com/dreamgyf/ImageStorage/master/AOSP%E7%9A%84%E7%BC%96%E8%AF%91%E5%8F%8A%E5%88%B7%E6%9C%BA_%E6%9E%84%E5%BB%BA%E7%9B%AE%E6%A0%87.png" alt=""></p>
+<p>你也可以在lunch后不加参数，这样会弹出一个菜单提示您选择目标</p>
+<p><img src="https://raw.githubusercontent.com/dreamgyf/ImageStorage/master/AOSP%E7%9A%84%E7%BC%96%E8%AF%91%E5%8F%8A%E5%88%B7%E6%9C%BA_%E9%80%89%E6%8B%A9%E7%9B%AE%E6%A0%87.png" alt=""></p>
+<p>指定完成后会弹出这样一个信息提示</p>
+<p><img src="https://raw.githubusercontent.com/dreamgyf/ImageStorage/master/AOSP%E7%9A%84%E7%BC%96%E8%AF%91%E5%8F%8A%E5%88%B7%E6%9C%BA_%E9%80%89%E6%8B%A9%E7%9B%AE%E6%A0%87%E5%AE%8C%E6%88%90.png" alt=""></p>
+<h1 id="开始编译"><a href="#开始编译" class="headerlink" title="开始编译"></a>开始编译</h1><p>构建部分的文档在这里：<a href="https://source.android.com/setup/build/building?hl=zh-cn#build-the-code" target="_blank" rel="noopener">https://source.android.com/setup/build/building?hl=zh-cn#build-the-code</a><br>如果是初次编译，我们就直接使用<code>m</code>命令就可以了</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">m -j8 #开启8线程编译</span><br></pre></td></tr></table></figure>
+
+<p>注意事项：</p>
+<ul>
+<li>现在直接使用<code>make</code>命令会提示<code>Calling make directly is no longer supported</code>然后退出编译，所以使用<code>m</code>命令替代<code>make</code></li>
+<li>不能使用root账号编译</li>
+</ul>
+<h1 id="刷机"><a href="#刷机" class="headerlink" title="刷机"></a>刷机</h1><ol>
+<li>先将手机的BL锁解开（每个机型都不同，网上会有对应的教程），进入fastboot模式\</li>
+<li>配置fastboot工具（现在Google好像推出了在线刷写工具<a href="https://flash.android.com/" target="_blank" rel="noopener">https://flash.android.com/</a>，可以尝试使用），可以在aosp目录下通过make fastboot命令编译出来，也可以直接从网上下载：<a href="https://developer.android.com/studio/releases/platform-tools" target="_blank" rel="noopener">https://developer.android.com/studio/releases/platform-tools</a></li>
+<li>进入编译后产生的镜像的目录…./aosp/out/target/product/walleye(这个是你机型的代号，每种机器都不一样)</li>
+<li>执行命令</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fastboot flashall -w</span><br></pre></td></tr></table></figure>
+
+<ol start="5">
+<li>重启即可看到，我们编译的Android系统已经运行到了手机上</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fastboot reboot #重启命令</span><br></pre></td></tr></table></figure>
+
+<h1 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h1><h2 id="MacOS上找不到SDK"><a href="#MacOS上找不到SDK" class="headerlink" title="MacOS上找不到SDK"></a>MacOS上找不到SDK</h2><p><img src="https://raw.githubusercontent.com/dreamgyf/ImageStorage/master/AOSP%E7%9A%84%E7%BC%96%E8%AF%91%E5%8F%8A%E5%88%B7%E6%9C%BA_MacOS%E6%89%BE%E4%B8%8D%E5%88%B0SDK.png" alt=""></p>
+<p>去这里<a href="https://github.com/phracker/MacOSX-SDKs/releases" target="_blank" rel="noopener">https://github.com/phracker/MacOSX-SDKs/releases</a>下载对应版本的sdk，然后将它放到/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs目录下，然后重新编译</p>
+<p>除此之外，也可以在Finder中查看</p>
+<p>/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs</p>
+<p>这个目录下存在哪个版本的sdk，确定后去修改…./aosp/build/soong/cc/config/x86_darwin_host.go文件，在darwinSupportedSdkVersions这个数组中加上你使用的sdk的版本</p>
+<p><img src="https://raw.githubusercontent.com/dreamgyf/ImageStorage/master/AOSP%E7%9A%84%E7%BC%96%E8%AF%91%E5%8F%8A%E5%88%B7%E6%9C%BA_%E6%89%BE%E5%88%B0%E6%96%87%E4%BB%B6.png" alt=""></p>
+<p><img src="https://raw.githubusercontent.com/dreamgyf/ImageStorage/master/AOSP%E7%9A%84%E7%BC%96%E8%AF%91%E5%8F%8A%E5%88%B7%E6%9C%BA_%E5%A2%9E%E5%8A%A0%E7%89%88%E6%9C%AC.png" alt=""></p>
+<p>保存后重新编译，这个方式可能当前编译脚本不支持你所用的sdk，可能会编译报错，所以还是推荐使用第一种方式</p>
+<h2 id="too-many-open-files"><a href="#too-many-open-files" class="headerlink" title="too many open files"></a>too many open files</h2><p>在Linux系统下有打开文件数的限制，可以使用以下命令设置最大可打开文件数</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">ulimit</span> -a 可以查看当前限制</span></span><br><span class="line">ulimit -n 2048</span><br></pre></td></tr></table></figure></div></article><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/AOSP/">AOSP</a></div><nav id="pagination"><div class="prev-post pull-left"><a href="/2021/12/23/android/common/%E5%90%84%E5%8E%82%E5%95%86Android%E7%B3%BB%E7%BB%9F%E7%A2%B0%E5%88%B0%E7%9A%84%E5%A5%87%E5%A5%87%E6%80%AA%E6%80%AA%E9%97%AE%E9%A2%98%E7%9A%84%E8%AE%B0%E5%BD%95/"><i class="fa fa-chevron-left">  </i><span>各厂商Android系统碰到的奇奇怪怪问题的记录</span></a></div><div class="next-post pull-right"><a href="/2021/05/26/android/view/%E8%B5%B0%E9%A9%AC%E7%81%AF%E5%BC%8F%E6%A8%AA%E5%90%91%E6%BB%9A%E5%8A%A8%E7%9A%84TextView/"><span>走马灯式横向滚动的TextView</span><i class="fa fa-chevron-right"></i></a></div></nav></div></div><footer class="footer-bg" style="background-image: url(/images/background.jpeg)"><div class="layout" id="footer"><div class="copyright">&copy;2013 - 2023 By dreamgyf</div><div class="framework-info"><span>驱动 - </span><a href="http://hexo.io" target="_blank" rel="noopener"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 - </span><a href="https://github.com/Molunerfinn/hexo-theme-melody" target="_blank" rel="noopener"><span>Melody</span></a></div><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fa fa-file"></i><span id="busuanzi_value_page_pv"></span><span></span></span></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@latest/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-ui-pack@latest/velocity.ui.min.js"></script><script src="/js/utils.js?version=1.9.0"></script><script src="/js/fancybox.js?version=1.9.0"></script><script src="/js/sidebar.js?version=1.9.0"></script><script src="/js/copy.js?version=1.9.0"></script><script src="/js/fireworks.js?version=1.9.0"></script><script src="/js/transition.js?version=1.9.0"></script><script src="/js/scroll.js?version=1.9.0"></script><script src="/js/head.js?version=1.9.0"></script><script>if(/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)) {
+  $('#nav').addClass('is-mobile')
+  $('footer').addClass('is-mobile')
+  $('#top-container').addClass('is-mobile')
+}</script></body></html>

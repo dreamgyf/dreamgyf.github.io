@@ -1,0 +1,72 @@
+<!DOCTYPE html><html lang="zh-Hans"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content="Git命令简介"><meta name="keywords" content="git"><meta name="author" content="dreamgyf"><meta name="copyright" content="dreamgyf"><title>Git命令简介 | 始终都是梦</title><link rel="shortcut icon" href="/images/avatar.jpeg"><link rel="stylesheet" href="/css/index.css?version=1.9.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css?version=1.9.0"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css?version=1.9.0"><meta name="format-detection" content="telephone=no"><meta http-equiv="x-dns-prefetch-control" content="on"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  hexoVersion: '4.2.1'
+} </script><meta name="generator" content="Hexo 4.2.1"></head><body><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar" data-display="true"><div class="toggle-sidebar-info text-center"><span data-toggle="切换文章详情">切换站点概览</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#配置"><span class="toc-number">1.</span> <span class="toc-text">配置</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#基本命令"><span class="toc-number">2.</span> <span class="toc-text">基本命令</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Rebase"><span class="toc-number">3.</span> <span class="toc-text">Rebase</span></a></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="/images/avatar.jpeg"></div><div class="author-info__name text-center">dreamgyf</div><div class="author-info__description text-center"></div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">文章</span><span class="pull-right">36</span></a><a class="author-info-articles__tags article-meta" href="/tags"><span class="pull-left">标签</span><span class="pull-right">40</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">分类</span><span class="pull-right">27</span></a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(/images/background.jpeg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">始终都是梦</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus">   <a class="site-page" href="/">主页</a><a class="site-page" href="/archives">文章</a><a class="site-page" href="/tags">标签</a><a class="site-page" href="/categories">分类</a></span><span class="pull-right"></span></div><div id="post-info"><div id="post-title">Git命令简介</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2020-08-01</time><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E5%85%B6%E4%BB%96/">其他</a></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name 'dreamgyf' //设置用户名</span><br><span class="line">git config --global user.email g2409197994@gmail.com //设置邮箱</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a>基本命令</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">git init //在当前目录创建版本库</span><br><span class="line">git add README.md //将文件添加到暂存区</span><br><span class="line">git commit //提交暂存区中的修改 -m"xxx":本次提交的说明 -a:相当多加了一步于git add .</span><br><span class="line">git branch 分支名 //创建分支，不加分支名可以查看所有分支 -d:删除指定分支</span><br><span class="line">git checkout 分支名 //切换分支 -b:创建并切换分支，相当于多加了一步git branch 分支名</span><br><span class="line">git remote add https://github.com/xxx/xxx.git //添加远程仓库，一般支持https和ssh两种协议</span><br><span class="line">git fetch //将远程主机的更新全部取回本地，后面加分支名的话只会取回指定分支</span><br><span class="line">git merge 分支名 //将选中分支合并到当前分支</span><br><span class="line">git pull 分支名 //相当于git fetch 分支名 + git merge 分支名</span><br><span class="line">git push //将当前本地分支推送至远程分支，如果是第一次推送则需要-u参数指定远程分支并建立联系，如git push -u origin master，下一次便可不加参数直接推送 -f:强制推送，会覆盖远程分支</span><br></pre></td></tr></table></figure>
+
+<h1 id="Rebase"><a href="#Rebase" class="headerlink" title="Rebase"></a>Rebase</h1><ul>
+<li><p>合并commit记录</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git rebase -i  [startpoint]  [endpoint]</span><br></pre></td></tr></table></figure>
+
+<p>其中<code>-i</code>的意思是<code>--interactive</code>，即弹出交互式的界面让用户编辑完成合并操作，<code>[startpoint] [endpoint]</code>则指定了一个编辑区间，如果不指定<code>[endpoint]</code>，则该区间的终点默认是当前分支HEAD所指向的commit(注：该区间指定的是一个前开后闭的区间)。</p>
+<p>命令可以按如下方式：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git rebase -i [commit id]</span><br></pre></td></tr></table></figure>
+
+<p>或</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git rebase -i HEAD~3</span><br></pre></td></tr></table></figure>
+
+<p>然后会出现一个vi编辑器界面，会提供给我们一个命令列表：</p>
+<blockquote>
+<p>pick：保留该commit（缩写:p）</p>
+<p>reword：保留该commit，但我需要修改该commit的注释（缩写:r）</p>
+<p>edit：保留该commit, 但我要停下来修改该提交(不仅仅修改注释)（缩写:e）</p>
+<p>squash：将该commit和前一个commit合并（缩写:s）</p>
+<p>fixup：将该commit和前一个commit合并，但我不要保留该提交的注释信息（缩写:f）</p>
+<p>exec：执行shell命令（缩写:x）</p>
+<p>drop：丢弃该commit（缩写:d）</p>
+</blockquote>
+<p>然后我们就可以在里面修改提交了，例如:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pick d2cf1f9 fix: 第一次提交</span><br><span class="line">s 47971f6 第二次提交</span><br><span class="line">s fb28c8d 第三次提交</span><br></pre></td></tr></table></figure>
+
+<p>将第二、三次的commit合并到第一次上</p>
+<p>编辑完保存退出vi就可以完成对commit的合并了</p>
+<p>如果保存时出现错误，输入<code>git rebase --edit-todo</code>便会回到编辑模式里，修改完后保存，<code>git rebase --continue</code></p>
+<p><a href="https://juejin.im/entry/6844903600976576519" target="_blank" rel="noopener">参考链接</a></p>
+</li>
+<li><p>合并分支</p>
+<p><code>rebase</code>和<code>merge</code>都是合并分支的操作</p>
+<p><code>merge</code>会在合并分支时产生一个新的commit记录，而<code>rebase</code>会以指定分支作为基础分支，之前所做的改动全部会在指定分支的基础上提交，不会产生新的commit记录。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git checkout dev</span><br><span class="line">git rebase master</span><br></pre></td></tr></table></figure>
+
+<p>分析一下上面命令进行的操作：</p>
+<p>首先，切换到<code>dev</code>分支上；</p>
+<p>然后，<code>git</code> 会把 <code>dev</code> 分支里面的每个 <code>commit</code> 取消掉；</p>
+<p>其次，把之前的<code>commit</code>临时保存成 <code>patch</code> 文件，存在 <code>.git/rebase</code> 目录下；</p>
+<p>然后，把<code>dev</code>分支更新到最新的 <code>master</code> 分支；</p>
+<p>最后，把上面保存的 <code>patch</code> 文件应用到 <code>dev</code> 分支上；</p>
+<ul>
+<li>使用场景<ol>
+<li>想要干净简洁的分支树</li>
+<li>在一个过时的分支上面开发的时候，执行 <code>rebase</code> 以同步 <code>master</code> 分支最新变动</li>
+</ol>
+</li>
+</ul>
+<p><strong>注意：当同一个分支有多个人使用的情况下，谨慎使用rebase，因为它改变了历史，可能会出现丢失commit的情况</strong></p>
+<p><a href="http://jartto.wang/2018/12/11/git-rebase/" target="_blank" rel="noopener">参考链接</a></p>
+</li>
+</ul>
+</div></article><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/git/">git</a></div><nav id="pagination"><div class="prev-post pull-left"><a href="/2020/10/19/android/view/%E8%87%AA%E5%AE%9A%E4%B9%89EditView%E6%97%B6%E8%B8%A9%E8%BF%87%E7%9A%84%E5%9D%91/"><i class="fa fa-chevron-left">  </i><span>自定义EditView时踩过的坑</span></a></div><div class="next-post pull-right"><a href="/2020/06/26/common/Markdown%E8%AF%AD%E6%B3%95/"><span>Markdown语法</span><i class="fa fa-chevron-right"></i></a></div></nav></div></div><footer class="footer-bg" style="background-image: url(/images/background.jpeg)"><div class="layout" id="footer"><div class="copyright">&copy;2013 - 2023 By dreamgyf</div><div class="framework-info"><span>驱动 - </span><a href="http://hexo.io" target="_blank" rel="noopener"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 - </span><a href="https://github.com/Molunerfinn/hexo-theme-melody" target="_blank" rel="noopener"><span>Melody</span></a></div><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fa fa-file"></i><span id="busuanzi_value_page_pv"></span><span></span></span></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@latest/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-ui-pack@latest/velocity.ui.min.js"></script><script src="/js/utils.js?version=1.9.0"></script><script src="/js/fancybox.js?version=1.9.0"></script><script src="/js/sidebar.js?version=1.9.0"></script><script src="/js/copy.js?version=1.9.0"></script><script src="/js/fireworks.js?version=1.9.0"></script><script src="/js/transition.js?version=1.9.0"></script><script src="/js/scroll.js?version=1.9.0"></script><script src="/js/head.js?version=1.9.0"></script><script>if(/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)) {
+  $('#nav').addClass('is-mobile')
+  $('footer').addClass('is-mobile')
+  $('#top-container').addClass('is-mobile')
+}</script></body></html>

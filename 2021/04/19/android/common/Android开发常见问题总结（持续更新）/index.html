@@ -1,0 +1,150 @@
+<!DOCTYPE html><html lang="zh-Hans"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content="Android开发常见问题总结（持续更新）"><meta name="keywords" content="常见问题"><meta name="author" content="dreamgyf"><meta name="copyright" content="dreamgyf"><title>Android开发常见问题总结（持续更新） | 始终都是梦</title><link rel="shortcut icon" href="/images/avatar.jpeg"><link rel="stylesheet" href="/css/index.css?version=1.9.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css?version=1.9.0"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css?version=1.9.0"><meta name="format-detection" content="telephone=no"><meta http-equiv="x-dns-prefetch-control" content="on"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  hexoVersion: '4.2.1'
+} </script><meta name="generator" content="Hexo 4.2.1"></head><body><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar" data-display="true"><div class="toggle-sidebar-info text-center"><span data-toggle="切换文章详情">切换站点概览</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#滑动"><span class="toc-number">1.</span> <span class="toc-text">滑动</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#RecyclerView"><span class="toc-number">2.</span> <span class="toc-text">RecyclerView</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Adapter"><span class="toc-number">2.1.</span> <span class="toc-text">Adapter</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ItemDecoration"><span class="toc-number">2.2.</span> <span class="toc-text">ItemDecoration</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Dialog"><span class="toc-number">3.</span> <span class="toc-text">Dialog</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#PopupWindow"><span class="toc-number">4.</span> <span class="toc-text">PopupWindow</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#广播"><span class="toc-number">5.</span> <span class="toc-text">广播</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#软键盘"><span class="toc-number">6.</span> <span class="toc-text">软键盘</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#实体键盘"><span class="toc-number">7.</span> <span class="toc-text">实体键盘</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#内存泄漏"><span class="toc-number">8.</span> <span class="toc-text">内存泄漏</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Fragment"><span class="toc-number">9.</span> <span class="toc-text">Fragment</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#混淆"><span class="toc-number">10.</span> <span class="toc-text">混淆</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#相机开发"><span class="toc-number">11.</span> <span class="toc-text">相机开发</span></a></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="/images/avatar.jpeg"></div><div class="author-info__name text-center">dreamgyf</div><div class="author-info__description text-center"></div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">文章</span><span class="pull-right">36</span></a><a class="author-info-articles__tags article-meta" href="/tags"><span class="pull-left">标签</span><span class="pull-right">40</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">分类</span><span class="pull-right">27</span></a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(/images/background.jpeg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">始终都是梦</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus">   <a class="site-page" href="/">主页</a><a class="site-page" href="/archives">文章</a><a class="site-page" href="/tags">标签</a><a class="site-page" href="/categories">分类</a></span><span class="pull-right"></span></div><div id="post-info"><div id="post-title">Android开发常见问题总结（持续更新）</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2021-04-19</time><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/Android/">Android</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/Android/%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/">常见问题</a></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><h1 id="滑动"><a href="#滑动" class="headerlink" title="滑动"></a>滑动</h1><ol>
+<li>滑动嵌套</li>
+</ol>
+<p>滑动组件的嵌套可能会产生以下一些问题：</p>
+<ul>
+<li>滑动冲突</li>
+</ul>
+<p>解决方法：使用<code>NestedScrollView</code>替代<code>ScrollView</code>，<code>RecyclerView</code>可以设置属性<code>android:nestedScrollingEnabled=&quot;false&quot;</code>或代码里<code>setNestedScrollingEnabled(false);</code>来禁用组件自身的滑动</p>
+<p>注意：如果<code>RecyclerView</code>只能显示一个Item的话，需要设置<code>NestedScrollView</code>的属性<code>android:fillViewport=&quot;true&quot;</code></p>
+<ul>
+<li>滑动失效</li>
+</ul>
+<p><code>ScrollView</code>设置<code>fillViewport=&quot;true&quot;</code>的情况下，如果对<code>ScrollView</code>的直接子view设置上下margin，在超出内容的高度小于设置的margin的情况下，可能会导致整个<code>ScrollView</code>滑动失效</p>
+<ol start="2">
+<li>焦点抢占</li>
+</ol>
+<p><code>ScrollView</code>、<code>RecyclerView</code>等滑动组件可能会抢占焦点，导致界面显示时直接滑动到对应组件的位置，而不是顶部</p>
+<p>解决方法：在顶部View(或者其他你所期望的初始位置)加上属性<code>android:focusable=&quot;true&quot;</code>和<code>android:focusableInTouchMode=&quot;true&quot;</code></p>
+<p>新解决方法：在顶部View上加<code>android:descendantFocusability</code>属性，该属性是用来定义父布局与子布局之间的关系的，它有三种值：</p>
+<ul>
+<li><code>beforeDescendants</code>：父布局会优先其子类控件而获取到焦点</li>
+<li><code>afterDescendants</code>：父布局只有当其子类控件不需要获取焦点时才获取焦点</li>
+<li><code>blocksDescendants</code>：父布局会覆盖子类控件而直接获得焦点</li>
+</ul>
+<p>使用<code>blocksDescendants</code>覆盖子布局焦点以解决焦点抢占问题</p>
+<hr>
+<h1 id="RecyclerView"><a href="#RecyclerView" class="headerlink" title="RecyclerView"></a>RecyclerView</h1><h2 id="Adapter"><a href="#Adapter" class="headerlink" title="Adapter"></a>Adapter</h2><ol>
+<li>在<code>onBindViewHolder</code>中设置子View回调时需要注意</li>
+</ol>
+<p>如果回调的参数包括position时，需要注意有没有地方会调用<code>notifyItemRemoved</code>或<code>notifyItemRangeRemoved</code>，如果有，需要使用<code>holder.getAdapterPosition()</code>来代替<code>onBindViewHolder</code>方法的position参数</p>
+<p>原因：<code>notifyItemRemoved</code>不会对其他的Item重新调用<code>onBindViewHolder</code>，这样可能会导致position错位。<code>holder.getAdapterPosition()</code>方法会返回数据在 Adapter 中的位置（即使位置的变化还未刷新到布局中）</p>
+<ol start="2">
+<li>如何在更新数据后重新定位到顶部</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//重写父类方法，获得绑定的RecyclerView</span></span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onAttachedToRecyclerView</span><span class="params">(@NonNull RecyclerView recyclerView)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">super</span>.onAttachedToRecyclerView(recyclerView);</span><br><span class="line">	mRecyclerView = recyclerView;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//当数据更新后调用</span></span><br><span class="line"><span class="keyword">if</span> (mRecyclerView != <span class="keyword">null</span> &amp;&amp; mRecyclerView.getChildCount() &gt; <span class="number">0</span>) &#123;</span><br><span class="line">	mRecyclerView.scrollToPosition(<span class="number">0</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>之前尝试过<code>mRecyclerView.scrollTo(0, 0);</code>但没有起效，不清楚为什么</p>
+<ol start="3">
+<li>动态部分更新数据时</li>
+</ol>
+<p>如果<code>RecyclerView</code>需要动态更新<strong>部分</strong>数据，并且在<code>onBindViewHolder</code>时对某些view设置了事件或者回调等，如果此时使用到了position参数需要注意，如果你只notify了部分数据更新，可能会导致更新后部分ViewHolder中的回调里的position不正确，建议：</p>
+<ul>
+<li>使用<code>notifyDataSetChanged()</code></li>
+<li>使用<code>notifyItem</code>，但是在<code>onBindViewHolder</code>中设置回调时不要使用position参数，而是使用<code>holder.getAdapterPosition()</code>替代（注意这个方法在<code>ViewHolder</code>没有和<code>RecyclerView</code>绑定时会返回-1 <code>NO_POSITION</code>）</li>
+</ul>
+<h2 id="ItemDecoration"><a href="#ItemDecoration" class="headerlink" title="ItemDecoration"></a>ItemDecoration</h2><ol>
+<li><code>StaggeredGridLayoutManager</code>下<code>ItemDecoration</code>的<code>offset</code>计算错误</li>
+</ol>
+<p>主要是因为<code>RecyclerView</code>动态更新数据时，会执行多次<code>measure</code>，但只会在第一次<code>measure</code>的时候调用<code>ItemDecoration.getItemOffsets</code>（因为<code>LP</code>里的<code>mInsetsDirty</code>变量），此时获得的<code>spanIndex</code>是一个错误值</p>
+<p>这个问题的具体分析可以看<a href="https://blog.kyleduo.com/2017/07/27/recyclerview-wrong-decoration-inset/" target="_blank" rel="noopener">这篇文章</a>，暂时没有什么好的解决方案，不建议大家使用反射，毕竟你不知道<code>Android</code>会不会更改这个变量</p>
+<hr>
+<h1 id="Dialog"><a href="#Dialog" class="headerlink" title="Dialog"></a>Dialog</h1><ol>
+<li>生命周期</li>
+</ol>
+<ul>
+<li>初始化时需要注意</li>
+</ul>
+<p>Dialog在第一次调用<code>show()</code>方法后才会执行<code>onCreate(Bundle savedInstanceState)</code>方法，因此建议自定义Dialog时将<code>findViewById</code>等初始化操作放在构造函数中进行，避免外部使用时因在<code>show()</code>之前设置视图数据导致NPE</p>
+<hr>
+<h1 id="PopupWindow"><a href="#PopupWindow" class="headerlink" title="PopupWindow"></a>PopupWindow</h1><ol>
+<li>点击没反应</li>
+</ol>
+<p><code>PopupWindow</code>如果不设置背景的话，在某些5.x以下系统机型上会出现点击没反应的问题</p>
+<p>解决方法：给PopupWindow设置一个空背景<code>popupWindow.setBackgroundDrawable(new BitmapDrawable(mContext.getResources(), (Bitmap) null));</code></p>
+<p>详见：<a href="https://juejin.cn/post/6844903761488379912" target="_blank" rel="noopener">https://juejin.cn/post/6844903761488379912</a></p>
+<hr>
+<h1 id="广播"><a href="#广播" class="headerlink" title="广播"></a>广播</h1><ol>
+<li>隐式广播</li>
+</ol>
+<p>在Android8.0以上的系统，大部分的隐式广播都被限制不可使用。</p>
+<p>解决方法：</p>
+<ol>
+<li>使用动态广播</li>
+<li>使用显示广播<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 方式一: 设置Component</span></span><br><span class="line">Intent intent = <span class="keyword">new</span> Intent(SOME_ACTION);</span><br><span class="line">intent.setComponent(<span class="keyword">new</span> ComponentName(context, SomeReceiver<span class="class">.<span class="keyword">class</span>))</span>;</span><br><span class="line">context.sendBroadcast(intent);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 方式二: 设置Package</span></span><br><span class="line">Intent intent = <span class="keyword">new</span> Intent(SOME_ACTION);</span><br><span class="line">intent.setPackage(<span class="string">"com.dreamgyf.xxx"</span>);</span><br><span class="line">context.sendBroadcast(intent);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 不知道包名的话可以通过PackageManager获取所有注册了指定action的广播的package</span></span><br><span class="line">Intent actionIntent = <span class="keyword">new</span> Intent(SOME_ACTION);</span><br><span class="line">PackageManager pm = context.getPackageManager();</span><br><span class="line">List&lt;ResolveInfo&gt; matches = pm.queryBroadcastReceivers(actionIntent, <span class="number">0</span>);</span><br><span class="line"><span class="keyword">for</span> (ResolveInfo resolveInfo : matches) &#123;            </span><br><span class="line">    Intent intent = <span class="keyword">new</span> Intent(actionIntent);            </span><br><span class="line">    intent.setPackage(resolveInfo.activityInfo.applicationInfo.packageName);            </span><br><span class="line">    intent.setAction(SOME_ACTION);            </span><br><span class="line">    context.sendBroadcast(intent);        </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<hr>
+<h1 id="软键盘"><a href="#软键盘" class="headerlink" title="软键盘"></a>软键盘</h1><ol>
+<li>弹起软键盘</li>
+</ol>
+<p>网上大部分文章所写的弹起软键盘的方法并不完美，大部分文章让你在<code>onResume</code>时再弹起，有的文章甚至让你<code>postDelayed</code>，非常不靠谱，经过本人分析，软键盘的弹起需要满足以下几个条件：</p>
+<ul>
+<li><p>控件为<code>EditText</code>或其子类</p>
+</li>
+<li><p>控件所在的<code>window</code>要获得焦点</p>
+</li>
+<li><p>控件本身要获得焦点</p>
+</li>
+</ul>
+<p>根据以上几个条件，我写了一个完美弹起软键盘的方法，<code>onCreate</code>时也可以照常使用：</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">fun</span> View.<span class="title">showKeyboard</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="keyword">val</span> ims = context.getSystemService(Context.INPUT_METHOD_SERVICE) <span class="keyword">as</span>? InputMethodManager ?: <span class="keyword">return</span></span><br><span class="line">    <span class="keyword">if</span> (hasWindowFocus()) &#123;</span><br><span class="line">        requestFocus()</span><br><span class="line">        ims.showSoftInput(<span class="keyword">this</span>, <span class="number">0</span>)</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        viewTreeObserver.addOnWindowFocusChangeListener(<span class="keyword">object</span> : OnWindowFocusChangeListener &#123;</span><br><span class="line">            <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">onWindowFocusChanged</span><span class="params">(hasFocus: <span class="type">Boolean</span>)</span></span> &#123;</span><br><span class="line">                <span class="keyword">if</span> (hasFocus) &#123;</span><br><span class="line">                    viewTreeObserver.removeOnWindowFocusChangeListener(<span class="keyword">this</span>)</span><br><span class="line">                    requestFocus()</span><br><span class="line">                    ims.showSoftInput(<span class="keyword">this</span><span class="symbol">@showKeyboard</span>, <span class="number">0</span>)</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="实体键盘"><a href="#实体键盘" class="headerlink" title="实体键盘"></a>实体键盘</h1><ol>
+<li><code>EditText</code>有焦点时会拦截键盘的数字键</li>
+</ol>
+<p>解决方法：使用<code>TextWatcher</code>等监听<code>EditText</code>输入</p>
+<hr>
+<h1 id="内存泄漏"><a href="#内存泄漏" class="headerlink" title="内存泄漏"></a>内存泄漏</h1><ol>
+<li>动画</li>
+</ol>
+<p>在Activity销毁之前如果没有cancel掉，会导致这个Activity内存泄漏</p>
+<ol start="2">
+<li><code>ClickableSpan</code></li>
+</ol>
+<p>使用<code>SpannableString.setSpan</code>方法设置<code>ClickableSpan</code>可能导致内存泄漏</p>
+<p>原因：<code>TextView</code>在<code>onSaveInstanceState</code>时会将<code>ClickableSpan</code>复制一份，由于某些原因，<code>SpannableString</code>不会删除这个<code>ClickableSpan</code>，从而导致内存泄漏，详见：<br><a href="https://stackoverflow.com/questions/28539216/android-textview-leaks-with-setmovementmethod" target="_blank" rel="noopener">StackOverflow</a></p>
+<p>解决方法：自定义一个抽象类同时继承<code>ClickableSpan</code>和实现<code>NoCopySpan</code>接口，外部<code>setSpan</code>时使用这个抽象类</p>
+<hr>
+<h1 id="Fragment"><a href="#Fragment" class="headerlink" title="Fragment"></a>Fragment</h1><ol>
+<li><code>Fragment</code>尽量不要使用带参构造函数，一定要保证有一个不含参的构造函数，否则在<code>Activity</code>重建时尝试反射<code>newInstance</code>恢复<code>Fragment</code>时会抛出<code>Could not find Fragment constructor</code>异常</li>
+</ol>
+<hr>
+<h1 id="混淆"><a href="#混淆" class="headerlink" title="混淆"></a>混淆</h1><ol>
+<li>反射</li>
+</ol>
+<p>如果使用到了反射，需要特别注意需不需要在<code>proguard-rules</code>中加入keep规则</p>
+<ol start="2">
+<li>module混淆</li>
+</ol>
+<p>如果是多module项目，想要在module中增加混淆规则，<code>proguardFiles</code>属性是无效的，应该使用<code>consumerProguardFiles</code>属性</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">android &#123;</span><br><span class="line">    compileSdkVersion <span class="number">28</span></span><br><span class="line"></span><br><span class="line">    defaultConfig &#123;</span><br><span class="line">        minSdkVersion <span class="number">21</span></span><br><span class="line">        targetSdkVersion <span class="number">28</span></span><br><span class="line">        versionName repo.version</span><br><span class="line"></span><br><span class="line">        testInstrumentationRunner <span class="string">"androidx.test.runner.AndroidJUnitRunner"</span></span><br><span class="line"></span><br><span class="line">        consumerProguardFiles <span class="string">'proguard-rules.pro'</span> <span class="comment">//这里</span></span><br><span class="line">    &#125;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="相机开发"><a href="#相机开发" class="headerlink" title="相机开发"></a>相机开发</h1><ol>
+<li>拍照角度</li>
+</ol>
+<p>相机的方向一般是以手机横向作为正方向，这样如果我们以竖屏的方式拍照，拍出来的照片可能会出现旋转了90度的情况，这时候就需要在拍照完后处理一下图片，旋转到正确位置。</p>
+<p>具体介绍与算法在Android SDK中<code>CaptureRequest.JPEG_ORIENTATION</code>的注释中</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">getJpegOrientation</span><span class="params">(CameraCharacteristics c, <span class="keyword">int</span> deviceOrientation)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (deviceOrientation == android.view.OrientationEventListener.ORIENTATION_UNKNOWN)</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="comment">//获得相机方向与设备方向间的夹角</span></span><br><span class="line">    <span class="keyword">int</span> sensorOrientation = c.get(CameraCharacteristics.SENSOR_ORIENTATION);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Round device orientation to a multiple of 90</span></span><br><span class="line">    deviceOrientation = (deviceOrientation + <span class="number">45</span>) / <span class="number">90</span> * <span class="number">90</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Reverse device orientation for front-facing cameras</span></span><br><span class="line">    <span class="keyword">boolean</span> facingFront = c.get(CameraCharacteristics.LENS_FACING) == CameraCharacteristics.LENS_FACING_FRONT;</span><br><span class="line">    <span class="keyword">if</span> (facingFront) deviceOrientation = -deviceOrientation;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Calculate desired JPEG orientation relative to camera orientation to make</span></span><br><span class="line">    <span class="comment">// the image upright relative to the device orientation</span></span><br><span class="line">    <span class="keyword">int</span> jpegOrientation = (sensorOrientation + deviceOrientation + <span class="number">360</span>) % <span class="number">360</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> jpegOrientation;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>计算好角度后就可以对图片做旋转了，网上有很多文章都说使用这种方式做旋转</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">captureBuilder.set(CaptureRequest.JPEG_ORIENTATION, getJpegOrientation(deviceRotation));</span><br></pre></td></tr></table></figure>
+
+<p>但实际上在某些系统上 (MIUI)，设置的这个参数并不会生效，所以我的方案是，获得拍摄好的照片Bitmap后，再对其进行旋转</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> Bitmap <span class="title">rotateBitmap</span><span class="params">(Bitmap bitmap, <span class="keyword">int</span> angle)</span> </span>&#123;</span><br><span class="line">   Matrix matrix = <span class="keyword">new</span> Matrix();</span><br><span class="line">   matrix.setRotate(angle);</span><br><span class="line">   <span class="keyword">return</span> Bitmap.createBitmap(bitmap, <span class="number">0</span>, <span class="number">0</span>, bitmap.getWidth(), bitmap.getHeight(), matrix, <span class="keyword">true</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></article><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/">常见问题</a></div><nav id="pagination"><div class="prev-post pull-left"><a href="/2021/05/26/android/view/%E8%B5%B0%E9%A9%AC%E7%81%AF%E5%BC%8F%E6%A8%AA%E5%90%91%E6%BB%9A%E5%8A%A8%E7%9A%84TextView/"><i class="fa fa-chevron-left">  </i><span>走马灯式横向滚动的TextView</span></a></div><div class="next-post pull-right"><a href="/2021/03/01/android/common/Android%E5%AF%B9Java%E7%9A%84%E4%BF%AE%E6%94%B9-SimpleDateFormat%E7%B1%BB/"><span>Android对Java的修改-SimpleDateFormat类</span><i class="fa fa-chevron-right"></i></a></div></nav></div></div><footer class="footer-bg" style="background-image: url(/images/background.jpeg)"><div class="layout" id="footer"><div class="copyright">&copy;2013 - 2023 By dreamgyf</div><div class="framework-info"><span>驱动 - </span><a href="http://hexo.io" target="_blank" rel="noopener"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 - </span><a href="https://github.com/Molunerfinn/hexo-theme-melody" target="_blank" rel="noopener"><span>Melody</span></a></div><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fa fa-file"></i><span id="busuanzi_value_page_pv"></span><span></span></span></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@latest/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-ui-pack@latest/velocity.ui.min.js"></script><script src="/js/utils.js?version=1.9.0"></script><script src="/js/fancybox.js?version=1.9.0"></script><script src="/js/sidebar.js?version=1.9.0"></script><script src="/js/copy.js?version=1.9.0"></script><script src="/js/fireworks.js?version=1.9.0"></script><script src="/js/transition.js?version=1.9.0"></script><script src="/js/scroll.js?version=1.9.0"></script><script src="/js/head.js?version=1.9.0"></script><script>if(/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)) {
+  $('#nav').addClass('is-mobile')
+  $('footer').addClass('is-mobile')
+  $('#top-container').addClass('is-mobile')
+}</script></body></html>
