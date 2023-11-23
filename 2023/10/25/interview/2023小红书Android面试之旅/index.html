@@ -1,0 +1,201 @@
+<!DOCTYPE html><html lang="zh-Hans"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content="2023小红书Android面试之旅"><meta name="keywords" content="面试"><meta name="author" content="dreamgyf"><meta name="copyright" content="dreamgyf"><title>2023小红书Android面试之旅 | 始终都是梦</title><link rel="shortcut icon" href="/images/avatar.jpeg"><link rel="stylesheet" href="/css/index.css?version=1.9.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css?version=1.9.0"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css?version=1.9.0"><meta name="format-detection" content="telephone=no"><meta http-equiv="x-dns-prefetch-control" content="on"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  hexoVersion: '4.2.1'
+} </script><meta name="generator" content="Hexo 4.2.1"></head><body><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar" data-display="true"><div class="toggle-sidebar-info text-center"><span data-toggle="切换文章详情">切换站点概览</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一面"><span class="toc-number">1.</span> <span class="toc-text">一面</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二面"><span class="toc-number">2.</span> <span class="toc-text">二面</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三面"><span class="toc-number">3.</span> <span class="toc-text">三面</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#HR面"><span class="toc-number">4.</span> <span class="toc-text">HR面</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#总结"><span class="toc-number">5.</span> <span class="toc-text">总结</span></a></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="/images/avatar.jpeg"></div><div class="author-info__name text-center">dreamgyf</div><div class="author-info__description text-center"></div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">文章</span><span class="pull-right">40</span></a><a class="author-info-articles__tags article-meta" href="/tags"><span class="pull-left">标签</span><span class="pull-right">43</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">分类</span><span class="pull-right">29</span></a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(/images/background.jpeg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">始终都是梦</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus">   <a class="site-page" href="/">主页</a><a class="site-page" href="/archives">文章</a><a class="site-page" href="/tags">标签</a><a class="site-page" href="/categories">分类</a></span><span class="pull-right"></span></div><div id="post-info"><div id="post-title">2023小红书Android面试之旅</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2023-10-25</time><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E9%9D%A2%E8%AF%95/">面试</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/Android/">Android</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/Android/%E9%9D%A2%E8%AF%95/">面试</a></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><h1 id="一面"><a href="#一面" class="headerlink" title="一面"></a>一面</h1><ul>
+<li><p>自我介绍</p>
+</li>
+<li><p>看你写了很多文章，拿你理解最深刻的一篇出来讲一讲</p>
+<p>  讲了<code>Binder</code>相关内容</p>
+</li>
+<li><p><code>Binder</code>大概分了几层</p>
+</li>
+<li><p>哪些方法调用会涉及到<code>Binder</code>通信</p>
+</li>
+<li><p>大概讲一下<code>startActivity</code>的流程，包括与<code>AMS</code>的交互</p>
+</li>
+<li><p>全页面停留时长埋点是怎么做的</p>
+<p>  我在项目中做过的内容，主要功能是计算用户在每个<code>Activity</code>的停留时长，并且支持多进程。这里的多进程支持主要是通过以<code>ContentProvider</code>作为中介，然后通过<code>ContentResolver.call</code>方法去调用它的各种方法以实现跨进程</p>
+</li>
+<li><p>动态权限申请是什么</p>
+<p>  详见 <a href="https://juejin.cn/post/7225516176171188285" target="_blank" rel="noopener">Android动态权限申请从未如此简单</a> 这篇文章</p>
+</li>
+<li><p>你做的性能监测工具，<code>FPS</code>是怎么采集的</p>
+</li>
+<li><p>性能监测工具用在了什么场景</p>
+</li>
+<li><p>有没有通过这个性能监测工具去做一些优化</p>
+</li>
+<li><p>图片库，例如<code>Glide</code>，一般对<code>Bitmap</code>有哪些优化点</p>
+</li>
+<li><p>过期的<code>Bitmap</code>可以复用吗</p>
+</li>
+<li><p>有没有基于<code>ASM</code>插桩做过一些插件</p>
+</li>
+<li><p>讲了一下当时做过的一个个人项目 <a href="https://github.com/dreamgyf/FastInflate" target="_blank" rel="noopener">FastInflate</a></p>
+<p>  这个项目没能达到最终的目标，但通过做这个项目学习了很多新知识，比如<code>APT</code>代码生成、阅读了<code>LayoutInflater</code>源码、<code>AppCompatDelegateImpl</code>实现的<code>LayoutInflater.Factory2</code>会极大的拖慢布局创建的速度等</p>
+</li>
+<li><p>怎么优化布局创建速度</p>
+<p>  提示了预加载，但我当时脑抽在纠结<code>xml</code>的缓存，没想到可以提前把视图先创建好</p>
+</li>
+<li><p>说一下你觉得你最擅长或者了解最透的点</p>
+<p>  我回答的自定义<code>View</code></p>
+</li>
+<li><p>解决过<code>View</code>的滑动冲突吗</p>
+</li>
+<li><p>讲解了一个之前写过的开源控件 <a href="https://github.com/dreamgyf/SwipeLoadingLayout" target="_blank" rel="noopener">SwipeLoadingLayout</a></p>
+</li>
+<li><p>一般遇到困难的解决方案是什么</p>
+</li>
+<li><p>算法题：<a href="https://leetcode.cn/problems/reverse-linked-list/" target="_blank" rel="noopener">反转链表</a></p>
+</li>
+<li><p>反问阶段</p>
+<ul>
+<li><p>咱们组主要负责哪些内容</p>
+</li>
+<li><p>主要使用<code>Java</code>还是<code>Kotlin</code></p>
+<p><code>Kotlin</code></p>
+</li>
+<li><p>小红书的面试一般是怎么个流程？多少轮？</p>
+<p>一般三轮技术面，一轮HR面</p>
+</li>
+<li><p>面试完一般多久会给到结果</p>
+<p>比较快，一两天的样子</p>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="二面"><a href="#二面" class="headerlink" title="二面"></a>二面</h1><ul>
+<li><p>自我介绍</p>
+</li>
+<li><p>为什么这个时间节点想要出来换工作呢</p>
+</li>
+<li><p>在B站这些年做了什么</p>
+</li>
+<li><p>做了哪些基础组件</p>
+<p>  讲解了一下之前写的 <a href="https://github.com/dreamgyf/SwipeLoadingLayout" target="_blank" rel="noopener">SwipeLoadingLayout</a></p>
+</li>
+<li><p>介绍一下<code>Android</code>的事件传递机制</p>
+</li>
+<li><p>你写的这个分享模块是如何设计的</p>
+<p>  对外采用流式调用的形式，内部通过策略模式区分不同的平台以及分享类型，给每个平台创建了一个中间<code>Activity</code>作为分享SDK请求的发起方（<code>SDK.getApi().share()</code>）以及分享结果的接收方（<code>onActivityResult</code>），然后通过广播将分享的结果送入到分享模块内进行处理，最终调用用户设置的分享回调告知结果</p>
+</li>
+<li><p>看你之前在扇贝的时候有开发过一些性能监测工具，那有做过性能优化吗</p>
+</li>
+<li><p>你是如何收集这些性能数据的</p>
+</li>
+<li><p>有没有对哪方面做过一些针对性的优化</p>
+</li>
+<li><p><code>Android</code>系统为什么会触发ANR，它的机制是什么</p>
+</li>
+<li><p>有解过ANR相关的问题吗？有哪几种类型？</p>
+</li>
+<li><p>算法题：<a href="https://leetcode.cn/problems/binary-tree-level-order-traversal/" target="_blank" rel="noopener">二叉树的层序遍历</a></p>
+</li>
+<li><p><code>Queue</code>除了<code>LinkedList</code>还有哪些实现类</p>
+</li>
+<li><p>现在还在面其他公司吗？你自己后面职业生涯的选择是怎么样的？</p>
+</li>
+<li><p>给我介绍了一下团队，说我面试的这个部门应该说是小红书最核心的团队，包括主页、搜索、图文、视频等等都在部门业务范畴内，部门主要分三层，除了业务层之外还有基础架构层以及性能优化层</p>
+</li>
+<li><p>反问阶段</p>
+<ul>
+<li><p>部门分三层的话，那新人进来的话是需要从业务层做起吗？</p>
+<p>  不是这样的，我们首先会考虑这个同学能干什么，然后会考虑这个同学愿意去做什么，进来后，有经验的同学也会来带你的，不会一上来就让你抗输出，总之会把人放到适合他的团队里</p>
+</li>
+<li><p>小红书会使用到一些跨端技术吗？</p>
+<p>  会，之前在一些新的<code>App</code>上使用的<code>Flutter</code>，现在主要用的是<code>RN</code>，还会使用到一些<code>DSL</code>，这个不能算跨段。为什么在小红书社区<code>App</code>中跨端技术提及的比较少，是因为小红书<code>App</code>非常重视用户体验，对性能的要求比较高</p>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="三面"><a href="#三面" class="headerlink" title="三面"></a>三面</h1><ul>
+<li><p>自我介绍</p>
+</li>
+<li><p>介绍一下目前负责的业务</p>
+</li>
+<li><p>工作过程中有碰到过什么难题，最后是怎么解决的</p>
+<p>  一开始脑抽了没想到该说什么，随便扯了一个没啥技术含量的东西，又扯了一个之前做的信号捕获的工具，后来回忆起来了，重新说了一个关于<code>DEX</code>编排的东西（主<code>DEX</code>中方法数超过65535导致打包失败，写了个脚本将一部分<code>Class</code>从主<code>DEX</code>中移除到其他DEX中）</p>
+</li>
+<li><p>如何设计一个头像的自定义<code>View</code>，要求使头像展示出来是一个圆形</p>
+</li>
+<li><p>介绍一下<code>Android</code>事件的分发流程</p>
+</li>
+<li><p>如何处理<code>View</code>的防误触</p>
+</li>
+<li><p>怎么处理滑动冲突</p>
+</li>
+<li><p><code>Activity</code>在<code>onCreate</code>方法中调用了<code>finish</code>方法，那它的生命周期会是怎样的</p>
+</li>
+<li><p>如果我想判断一个<code>Activity</code>中的一个<code>View</code>的尺寸，那我什么时候能够拿到</p>
+</li>
+<li><p><code>RecyclerView</code>如何实现一个吸顶效果</p>
+</li>
+<li><p><code>Java</code>和<code>Koltin</code>你哪个用的比较多</p>
+</li>
+<li><p>有用过<code>Kotlin</code>的协程吗</p>
+</li>
+<li><p><code>Kotlin</code>中的哪些Feature你用的多，觉得写的好呢</p>
+</li>
+<li><p>你是怎么理解<code>MVVM</code>的</p>
+</li>
+<li><p>你有用过<code>Jetpack Compose</code>吗</p>
+</li>
+<li><p>有用过<code>kotlin</code>中的<code>by lazy</code>和<code>lateinit</code>吗</p>
+</li>
+<li><p><code>kotlin</code>中怎么实现单例，怎么定义一个类的静态变量</p>
+</li>
+<li><p>算法题：<a href="https://leetcode.cn/problems/maximum-difference-between-increasing-elements/" target="_blank" rel="noopener">增量元素之间的最大差值</a></p>
+</li>
+<li><p>你这次看机会的原因是什么</p>
+</li>
+<li><p>反问阶段我感觉之前问的差不多了，这次就没再问什么问题了</p>
+</li>
+</ul>
+<h1 id="HR面"><a href="#HR面" class="headerlink" title="HR面"></a>HR面</h1><ul>
+<li><p>现在是离职还是在职状态</p>
+</li>
+<li><p>介绍一下之前负责的工作</p>
+</li>
+<li><p>用户量怎么样</p>
+</li>
+<li><p>这个项目是从0到1开发的吗</p>
+</li>
+<li><p>这个业务有什么特点，对于客户端开发有什么挑战与困难</p>
+</li>
+<li><p>团队分工是怎样的</p>
+</li>
+<li><p>这个项目能做成现在这个样子，你自己的核心贡献有哪些</p>
+</li>
+<li><p>这个事情对你来说有什么收获吗</p>
+</li>
+<li><p>在B站的工作节奏是怎么样的</p>
+</li>
+<li><p>离职的原因是什么呢</p>
+</li>
+<li><p>你自己希望找一个什么样的环境或者什么阶段的业务</p>
+</li>
+<li><p>你对小红书有什么了解吗</p>
+</li>
+<li><p>未来两三年对于职业发展的想法</p>
+</li>
+<li><p>你觉得现在有什么限制了你或者你觉得你需要提升哪些部分</p>
+</li>
+<li><p>反问阶段</p>
+<ul>
+<li>问了一些作息、福利待遇之类的问题</li>
+</ul>
+</li>
+</ul>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>小红书面试总体而言给我的体验是很好的，每轮面试后基本上都是当天就能出结果，然后约下一轮的面试。最终从一面到HR面结束出结果，一共花了9天时间，还是挺快的。二面结束后，一面的面试官加我微信说小红书目前很缺人，感兴趣的同学也可以来试试。</p>
+</div></article><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E9%9D%A2%E8%AF%95/">面试</a></div><nav id="pagination"><div class="next-post pull-right"><a href="/2023/09/14/android/aosp/Android%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90-Service%E7%9A%84%E5%81%9C%E6%AD%A2%E4%B8%8E%E9%87%8D%E5%BB%BA/"><span>Android源码分析 - Service的停止与重建</span><i class="fa fa-chevron-right"></i></a></div></nav></div></div><footer class="footer-bg" style="background-image: url(/images/background.jpeg)"><div class="layout" id="footer"><div class="copyright">&copy;2013 - 2023 By dreamgyf</div><div class="framework-info"><span>驱动 - </span><a href="http://hexo.io" target="_blank" rel="noopener"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 - </span><a href="https://github.com/Molunerfinn/hexo-theme-melody" target="_blank" rel="noopener"><span>Melody</span></a></div><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fa fa-file"></i><span id="busuanzi_value_page_pv"></span><span></span></span></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@latest/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-ui-pack@latest/velocity.ui.min.js"></script><script src="/js/utils.js?version=1.9.0"></script><script src="/js/fancybox.js?version=1.9.0"></script><script src="/js/sidebar.js?version=1.9.0"></script><script src="/js/copy.js?version=1.9.0"></script><script src="/js/fireworks.js?version=1.9.0"></script><script src="/js/transition.js?version=1.9.0"></script><script src="/js/scroll.js?version=1.9.0"></script><script src="/js/head.js?version=1.9.0"></script><script>if(/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)) {
+  $('#nav').addClass('is-mobile')
+  $('footer').addClass('is-mobile')
+  $('#top-container').addClass('is-mobile')
+}</script></body></html>
