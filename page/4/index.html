@@ -156,6 +156,13 @@
 <hr>
 <h1 id="TextView"><a href="#TextView" class="headerlink" title="TextView"></a>TextView</h1><h2 id="重新布局"><a href="#重新布局" class="headerlink" title="重新布局"></a>重新布局</h2><p><code>TextView</code>在调用<code>setText</code>后不一定会走<code>requestLayout</code>方法，在某些情况下会导致显示异常，比如因<code>RecyclerView</code>复用导致长度不符合预期的问题</p>
 <p>解决方案：简单来说当<code>TextView</code>的<code>width</code>属性不为<code>WRAP_CONTENT</code>且文字高度没发生变化的情况下，它就不会重新布局，如果你需要它重新计算宽高的话，注意以上的条件，设置合适的属性即可，具体的源码分析可以参考 <a href="https://zhuanlan.zhihu.com/p/381485429" target="_blank" rel="noopener">从 TextView.setText() 看 requestLayout 和 invalidate 方法有什么不同</a> 这篇文章</p>
+<h2 id="ellipse"><a href="#ellipse" class="headerlink" title="ellipse"></a>ellipse</h2><p><code>TextView</code>在某些情况下，<code>ellipse</code>属性会失效</p>
+<ul>
+<li><p><code>setText</code>设置了<code>BufferType</code>为<code>NORMAL</code>以外的其他值</p>
+</li>
+<li><p><code>TextView</code>设置了<code>MovementMethod</code></p>
+</li>
+</ul>
 <hr>
 <h1 id="滑动"><a href="#滑动" class="headerlink" title="滑动"></a>滑动</h1><ol>
 <li>滑动嵌套</li>
